@@ -2,9 +2,10 @@
 
 The "asf-soap-adapter" is based on the ActiveSalesforce-Adapter. It has been updated to include new methods/APIs from the latest version of the Salesforce Web Services (SOAP-based) APIs. At the time of release, that API is at version 20. 
 Major features:
-1. Adding RForce GEM as a prerequisite. By removing embedded RForce 0.4.0 files, we can now taken advantage of RForce 0.4.1 GEM, which is cleaner and addressed several problems with Hash. One thing to note: if you are using <em>RFORCE:MethodHash</em> class. It has been been replaced by <OpenHash> class. To use it, simply call <em>OpenHash.new({})</em> in place of MethodHash. Previously, there was a bug with the MethodHash class causing Id to be put into an array, e.g. FeedPost.Id[0], even though there was only one element. So, now it is FeedPost.Id.
-2. Adding several useful Salesforce convenience classes, which is under Saleforce module. You can use <em>Salesforce::Account, Salesforce::User</em>, etc. This frees you from having to create Ruby Models in your application, which can be in a pain, if you using Rails db generation tools, e.g. Hobo, which checks to see if you have a database table for that class. With these convenience classes, you are no longer required to create those tables.
-3. Support for Chatter newsfeeds. Retrieving Chatter Feed has always been difficult. There are several challenges. First, you can not select directly from the <em>FeedPost</em>, <em>FeedTrackedChanges</em>, and <em>FeedComments</em> tables. That means you always needed to put that in a subquery, as: <em>SELECT Id, Type, (FeedPost.ID, FeedPost.Body, FeedPost.ContentType, et.... ), (Select Id, FieldName, OldValue, NewValue from FeedTrackedChanges), (Select Id, CommentBody, .... from FeedComments) form {feed_type}Feed where parentid='#####'</em>. Doing that over and over again can be repetitive and against the DRY (Don't Repeat Yourself) principle of Rails programming. Therefore, a convenience class has been provided from you. see <em>Salesforce::ChatterFeed</em>. See following example.
+1. Removed hardcoded version of v19, v18, etc in the code. Now, you just specify it in the 'database.yml' file with 'api_version'. By default it is at 20.0
+2. Adding RForce GEM as a prerequisite. By removing embedded RForce 0.4.0 files, we can now taken advantage of RForce 0.4.1 GEM, which is cleaner and addressed several problems with Hash. One thing to note: if you are using <em>RFORCE:MethodHash</em> class. It has been been replaced by <OpenHash> class. To use it, simply call <em>OpenHash.new({})</em> in place of MethodHash. Previously, there was a bug with the MethodHash class causing Id to be put into an array, e.g. FeedPost.Id[0], even though there was only one element. So, now it is FeedPost.Id.
+3. Adding several useful Salesforce convenience classes, which is under Saleforce module. You can use <em>Salesforce::Account, Salesforce::User</em>, etc. This frees you from having to create Ruby Models in your application, which can be in a pain, if you using Rails db generation tools, e.g. Hobo, which checks to see if you have a database table for that class. With these convenience classes, you are no longer required to create those tables.
+4. Support for Chatter newsfeeds. Retrieving Chatter Feed has always been difficult. There are several challenges. First, you can not select directly from the <em>FeedPost</em>, <em>FeedTrackedChanges</em>, and <em>FeedComments</em> tables. That means you always needed to put that in a subquery, as: <em>SELECT Id, Type, (FeedPost.ID, FeedPost.Body, FeedPost.ContentType, et.... ), (Select Id, FieldName, OldValue, NewValue from FeedTrackedChanges), (Select Id, CommentBody, .... from FeedComments) form {feed_type}Feed where parentid='#####'</em>. Doing that over and over again can be repetitive and against the DRY (Don't Repeat Yourself) principle of Rails programming. Therefore, a convenience class has been provided from you. see <em>Salesforce::ChatterFeed</em>. See following example.
     chatter_feed_finder = Salesforce::ChatterFeed.new
     # The following two lines shows how to get the account_feed.id. You can replace it with your
     account_feed = Salesforce::AccountFeed.first
@@ -21,20 +22,22 @@ where,
        directory_name -> where the attachment will be saved at, it is stored under the RAILS_ROOT/public/tmp/{your directory}
        limit -> max of number of feed retrieved which this call
        get_attachment -> boolean flag: yes (get attachment), no (don't get attachment)
-4. Salesforce Object lookup utility, provide a Salesforce object Id, and figure out if it is an Account, User, Lead, etc. <em>Salesforce::SfUtility.determine_sf_object_type(id)</em>. See the document for other useful method in this class.
-5. Ability to call non-traditional SQLs. e.g. with "LIMIT", "GROUP BY", "HAVING", and "WITH DATA CATEGORY". example:
+5. Salesforce Object lookup utility, provide a Salesforce object Id, and figure out if it is an Account, User, Lead, etc. <em>Salesforce::SfUtility.determine_sf_object_type(id)</em>. See the document for other useful method in this class.
+6. Ability to call non-traditional SQLs. e.g. with "LIMIT", "GROUP BY", "HAVING", and "WITH DATA CATEGORY". example:
     another = Salesforce::SfBase.query_by_sql("SELECT LeadSource, COUNT(Name) FROM Lead GROUP BY LeadSource")
     assert another.size
+7. more ....
 
     zero_result = Salesforce::SfBase.query_by_sql("SELECT Name, Count(Id) FROM Account GROUP BY Name HAVING Count(Id) > 100")
     assert_nil zero_result
 6. The best part, is this gem is backward compatible with the original ActiveSalesforce-Adapter GEM release. You only need to make minimum changes to your application to use this GEM. To use this gem, simply replace the declaration in <em>config/environment.rb</em> with <em>config.gem "asf-soap-adapter", :lib => "activerecord-activesalesforce-adapter"</em> in the <em>Rails::Initializer.run do |config|</em> section.
 == Significant Changes
-1. Detach hardcoded RForce 0.4.1
-2. Conveninence classes, Salesforce::Account, User, ....
-3. Chatter Feed
-4. Object Lookup Utility (SF id -> SF object type)
-5. Nontraditional query support
+1. Detached hardcoded RForce 0.4.0 and replaced with RForce 0.4.1 gem.
+2. Dynamic Adapter version from 'database.yml' file via 'api_version' parameter
+3. Conveninence classes, Salesforce::Account, User, ....
+4. Chatter Feed
+5. Object Lookup Utility (SF id -> SF object type)
+6. Nontraditional query support
 
 == Installation
 
@@ -118,7 +121,7 @@ test
  Unit and functional tests along with fixtures.
 
 == Additional Note:
-The enclosed the test app (asf-soap-adapter-rails-app) shows how to use the framework. Go into its test/unit, where examples are provided.
+The enclosed test app (asf-soap-adapter-rails-app) shows how to use the framework. Go into its "test/unit" directory, where examples are provided.
 
 I am currently, updating my reference app SFRWatcher to SFRWatcher_v20 to match the switch from the old gem to this new gem. Once it is ready, it will be posted on the web soon.
 
