@@ -1,0 +1,928 @@
+# Logfile created on Tue Nov 09 10:40:38 +0100 2010
+Using ActiveSalesforce connection
+Establishing new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'raygao@cde-verizon.net, ''
+Created new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'raygao@cde-verizon.net', ''] in 1.51299810409546 seconds
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+
+Using ActiveSalesforce connection
+   Creating ActiveRecord stub for the referenced entity 'UserRole'
+   Created one-to-one relationship 'user_role' from Salesforce::User to Salesforce::UserRole using user_role_id
+   Skipping unsupported polymophic one-to-one relationship 'delegated_approver' from Salesforce::User to [Group, User] using delegated_approver_id
+   Created one-to-one relationship 'manager' from Salesforce::User to Salesforce::User using manager_id
+   Created one-to-one relationship 'created_by' from Salesforce::User to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::User to Salesforce::User using last_modified_by_id
+   Created one-to-one relationship 'contact' from Salesforce::User to Salesforce::Contact using contact_id
+   Created one-to-one relationship 'account' from Salesforce::User to Salesforce::Account using account_id
+   Creating ActiveRecord stub for the referenced entity 'CallCenter'
+   Created one-to-one relationship 'call_center' from Salesforce::User to Salesforce::CallCenter using call_center_id
+   Creating ActiveRecord stub for the referenced entity 'AccountShare'
+   Created one-to-many relationship 'account_shares' from Salesforce::User to Salesforce::AccountShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'ApexLog'
+   Created one-to-many relationship 'apex_logs' from Salesforce::User to Salesforce::ApexLog using log_user_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignShare'
+   Created one-to-many relationship 'campaign_shares' from Salesforce::User to Salesforce::CampaignShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CaseShare'
+   Created one-to-many relationship 'case_shares' from Salesforce::User to Salesforce::CaseShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamMember'
+   Created one-to-many relationship 'case_team_members' from Salesforce::User to Salesforce::CaseTeamMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamTemplateMember'
+   Created one-to-many relationship 'case_team_template_members' from Salesforce::User to Salesforce::CaseTeamTemplateMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'Chatter_Message__Share'
+   Created one-to-many relationship 'chatter_message__shares' from Salesforce::User to Salesforce::Chatter_Message__Share using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CollaborationGroupMember'
+   Created one-to-many relationship 'collaboration_group_members' from Salesforce::User to Salesforce::CollaborationGroupMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'CollaborationInvitation'
+   Created one-to-many relationship 'collaboration_invitations' from Salesforce::User to Salesforce::CollaborationInvitation using created_by_id
+   Created one-to-many relationship 'collaboration_invitations' from Salesforce::User to Salesforce::CollaborationInvitation using shared_entity_id
+   Creating ActiveRecord stub for the referenced entity 'ContactShare'
+   Created one-to-many relationship 'contact_shares' from Salesforce::User to Salesforce::ContactShare using user_or_group_id
+   Created one-to-many relationship 'entity_subscriptions' from Salesforce::User to Salesforce::EntitySubscription using created_by_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::User to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'feed_subscriptions' from Salesforce::User to Salesforce::EntitySubscription using subscriber_id
+   Creating ActiveRecord stub for the referenced entity 'EventAttendee'
+   Created one-to-many relationship 'event_attendees' from Salesforce::User to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::User to Salesforce::FeedComment using created_by_id
+   Creating ActiveRecord stub for the referenced entity 'ForecastShare'
+   Created one-to-many relationship 'forecast_shares' from Salesforce::User to Salesforce::ForecastShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'GroupMember'
+   Created one-to-many relationship 'group_members' from Salesforce::User to Salesforce::GroupMember using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'LeadShare'
+   Created one-to-many relationship 'lead_shares' from Salesforce::User to Salesforce::LeadShare using user_or_group_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::User to Salesforce::NewsFeed using created_by_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::User to Salesforce::NewsFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityShare'
+   Created one-to-many relationship 'opportunity_shares' from Salesforce::User to Salesforce::OpportunityShare using user_or_group_id
+   Created one-to-many relationship 'feeds' from Salesforce::User to Salesforce::UserFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'UserPreference'
+   Created one-to-many relationship 'user_preferences' from Salesforce::User to Salesforce::UserPreference using user_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::User to Salesforce::UserProfileFeed using created_by_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::User to Salesforce::UserProfileFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Vote'
+   Created one-to-many relationship 'votes' from Salesforce::User to Salesforce::Vote using created_by_id
+   Created one-to-one relationship 'parent' from Salesforce::AccountFeed to Salesforce::Account using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::AccountFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::AccountFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::AccountFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::AccountFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::AccountFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Account to Salesforce::Account using master_record_id
+   Created one-to-one relationship 'parent' from Salesforce::Account to Salesforce::Account using parent_id
+   Created one-to-one relationship 'owner' from Salesforce::Account to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Account to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Account to Salesforce::User using last_modified_by_id
+   Creating ActiveRecord stub for the referenced entity 'AccountContactRole'
+   Created one-to-many relationship 'account_contact_roles' from Salesforce::Account to Salesforce::AccountContactRole using account_id
+   Created one-to-many relationship 'feeds' from Salesforce::Account to Salesforce::AccountFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'AccountHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Account to Salesforce::AccountHistory using account_id
+   Creating ActiveRecord stub for the referenced entity 'AccountPartner'
+   Created one-to-many relationship 'account_partners_from' from Salesforce::Account to Salesforce::AccountPartner using account_from_id
+   Created one-to-many relationship 'account_partners_to' from Salesforce::Account to Salesforce::AccountPartner using account_to_id
+   Created one-to-many relationship 'shares' from Salesforce::Account to Salesforce::AccountShare using account_id
+   Creating ActiveRecord stub for the referenced entity 'ActivityHistory'
+   Created one-to-many relationship 'activity_histories' from Salesforce::Account to Salesforce::ActivityHistory using account_id
+   Created one-to-many relationship 'contacts' from Salesforce::Account to Salesforce::Contact using account_id
+   Created one-to-many relationship 'contracts' from Salesforce::Account to Salesforce::Contract using account_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Account to Salesforce::EntitySubscription using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Event'
+   Created one-to-many relationship 'events' from Salesforce::Account to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Account to Salesforce::NewsFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Note'
+   Created one-to-many relationship 'notes' from Salesforce::Account to Salesforce::Note using parent_id
+   Creating ActiveRecord stub for the referenced entity 'NoteAndAttachment'
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Account to Salesforce::NoteAndAttachment using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpenActivity'
+   Created one-to-many relationship 'open_activities' from Salesforce::Account to Salesforce::OpenActivity using account_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityPartner'
+   Created one-to-many relationship 'opportunity_partners_to' from Salesforce::Account to Salesforce::OpportunityPartner using account_to_id
+   Creating ActiveRecord stub for the referenced entity 'Partner'
+   Created one-to-many relationship 'partners_from' from Salesforce::Account to Salesforce::Partner using account_from_id
+   Created one-to-many relationship 'partners_to' from Salesforce::Account to Salesforce::Partner using account_to_id
+   Creating ActiveRecord stub for the referenced entity 'ProcessInstance'
+   Created one-to-many relationship 'process_instances' from Salesforce::Account to Salesforce::ProcessInstance using target_object_id
+   Creating ActiveRecord stub for the referenced entity 'Task'
+   Created one-to-many relationship 'tasks' from Salesforce::Account to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Account to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mbegin_db_transaction() (0.0ms)[0m   [0mOpening boxcar[0m
+  [4;36;1mSalesforce::Account Create (1.0ms)[0m   [0;1mINSERT INTO accounts (name, shipping_state, rating, master_record_id, last_activity_date, sic, upsell_opportunity__c, created_by_id, billing_city, billing_state, ticker_symbol, last_modified_by_id, shipping_country, owner_id, is_deleted, type, ownership, numberof_locations__c, parent_id, billing_country, shipping_street, shipping_postal_code, phone, fax, account_number, website, site, created_date, sla__c, active__c, shipping_city, annual_revenue, description, system_modstamp, sla_serial_number__c, sla_expiration_date__c, billing_street, billing_postal_code, last_modified_date, industry, number_of_employees, customer_priority__c) VALUES('1234567890', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mcommit_db_transaction() (0.0ms)[0m   [0mCommitting boxcar with 1 commands[0m
+  [4;36;1mSalesforce::SfBase Delete all (2047.0ms)[0m   [0;1mDELETE FROM salesforce_sf_bases WHERE (id IN ('001A000000SBjiaIAD')) [0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::AssetFeed to Salesforce::Asset using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::AssetFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::AssetFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::AssetFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::AssetFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::AssetFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::CampaignFeed to Salesforce::Campaign using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::CampaignFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::CampaignFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::CampaignFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::CampaignFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::CampaignFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::Campaign to Salesforce::Campaign using parent_id
+   Created one-to-one relationship 'owner' from Salesforce::Campaign to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Campaign to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Campaign to Salesforce::User using last_modified_by_id
+   Creating ActiveRecord stub for the referenced entity 'RecordType'
+   Created one-to-one relationship 'campaign_member_record_type' from Salesforce::Campaign to Salesforce::RecordType using campaign_member_record_type_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Campaign to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feeds' from Salesforce::Campaign to Salesforce::CampaignFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignMember'
+   Created one-to-many relationship 'campaign_members' from Salesforce::Campaign to Salesforce::CampaignMember using campaign_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignMemberStatus'
+   Created one-to-many relationship 'campaign_member_statuses' from Salesforce::Campaign to Salesforce::CampaignMemberStatus using campaign_id
+   Created one-to-many relationship 'shares' from Salesforce::Campaign to Salesforce::CampaignShare using campaign_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Campaign to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Campaign to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Campaign to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Campaign to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Campaign to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Campaign to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Campaign to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::CaseFeed to Salesforce::Case using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::CaseFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::CaseFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::CaseFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::CaseFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::CaseFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'contact' from Salesforce::Case to Salesforce::Contact using contact_id
+   Created one-to-one relationship 'account' from Salesforce::Case to Salesforce::Account using account_id
+   Created one-to-one relationship 'asset' from Salesforce::Case to Salesforce::Asset using asset_id
+   Created one-to-one relationship 'parent' from Salesforce::Case to Salesforce::Case using parent_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Case to [Group, User] using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Case to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Case to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Case to Salesforce::ActivityHistory using what_id
+   Creating ActiveRecord stub for the referenced entity 'CaseComment'
+   Created one-to-many relationship 'case_comments' from Salesforce::Case to Salesforce::CaseComment using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseContactRole'
+   Created one-to-many relationship 'case_contact_roles' from Salesforce::Case to Salesforce::CaseContactRole using cases_id
+   Created one-to-many relationship 'feeds' from Salesforce::Case to Salesforce::CaseFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Case to Salesforce::CaseHistory using case_id
+   Created one-to-many relationship 'shares' from Salesforce::Case to Salesforce::CaseShare using case_id
+   Creating ActiveRecord stub for the referenced entity 'CaseSolution'
+   Created one-to-many relationship 'case_solutions' from Salesforce::Case to Salesforce::CaseSolution using case_id
+   Created one-to-many relationship 'team_members' from Salesforce::Case to Salesforce::CaseTeamMember using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamTemplateRecord'
+   Created one-to-many relationship 'team_template_records' from Salesforce::Case to Salesforce::CaseTeamTemplateRecord using parent_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Case to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Case to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Case to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Case to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Case to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Case to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Case to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::ContactFeed to Salesforce::Contact using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::ContactFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::ContactFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::ContactFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::ContactFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::ContactFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Contact to Salesforce::Contact using master_record_id
+   Created one-to-one relationship 'account' from Salesforce::Contact to Salesforce::Account using account_id
+   Created one-to-one relationship 'reports_to' from Salesforce::Contact to Salesforce::Contact using reports_to_id
+   Created one-to-one relationship 'owner' from Salesforce::Contact to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Contact to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Contact to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_contact_roles' from Salesforce::Contact to Salesforce::AccountContactRole using contact_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Contact to Salesforce::ActivityHistory using who_id
+   Created one-to-many relationship 'campaign_members' from Salesforce::Contact to Salesforce::CampaignMember using contact_id
+   Created one-to-many relationship 'case_contact_roles' from Salesforce::Contact to Salesforce::CaseContactRole using contact_id
+   Created one-to-many relationship 'case_team_members' from Salesforce::Contact to Salesforce::CaseTeamMember using member_id
+   Created one-to-many relationship 'case_team_template_members' from Salesforce::Contact to Salesforce::CaseTeamTemplateMember using member_id
+   Created one-to-many relationship 'feeds' from Salesforce::Contact to Salesforce::ContactFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'ContactHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Contact to Salesforce::ContactHistory using contact_id
+   Created one-to-many relationship 'shares' from Salesforce::Contact to Salesforce::ContactShare using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ContractContactRole'
+   Created one-to-many relationship 'contract_contact_roles' from Salesforce::Contact to Salesforce::ContractContactRole using contact_id
+   Creating ActiveRecord stub for the referenced entity 'EmailStatus'
+   Created one-to-many relationship 'email_statuses' from Salesforce::Contact to Salesforce::EmailStatus using who_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Contact to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Contact to Salesforce::Event using who_id
+   Created one-to-many relationship 'event_attendees' from Salesforce::Contact to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Contact to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Contact to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Contact to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Contact to Salesforce::OpenActivity using who_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityContactRole'
+   Created one-to-many relationship 'opportunity_contact_roles' from Salesforce::Contact to Salesforce::OpportunityContactRole using contact_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Contact to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Contact to Salesforce::Task using who_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Contact to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::ContractFeed to Salesforce::Contract using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::ContractFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::ContractFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::ContractFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::ContractFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::ContractFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'account' from Salesforce::Contract to Salesforce::Account using account_id
+   Created one-to-one relationship 'owner' from Salesforce::Contract to Salesforce::User using owner_id
+   Created one-to-one relationship 'company_signed' from Salesforce::Contract to Salesforce::User using company_signed_id
+   Created one-to-one relationship 'customer_signed' from Salesforce::Contract to Salesforce::Contact using customer_signed_id
+   Created one-to-one relationship 'activated_by' from Salesforce::Contract to Salesforce::User using activated_by_id
+   Created one-to-one relationship 'created_by' from Salesforce::Contract to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Contract to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Contract to Salesforce::ActivityHistory using what_id
+   Creating ActiveRecord stub for the referenced entity 'Approval'
+   Created one-to-many relationship 'approvals' from Salesforce::Contract to Salesforce::Approval using parent_id
+   Created one-to-many relationship 'contract_contact_roles' from Salesforce::Contract to Salesforce::ContractContactRole using contract_id
+   Created one-to-many relationship 'feeds' from Salesforce::Contract to Salesforce::ContractFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'ContractHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Contract to Salesforce::ContractHistory using contract_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Contract to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Contract to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Contract to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Contract to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Contract to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Contract to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Contract to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Contract to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Contract to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Skipping unsupported polymophic one-to-one relationship 'parent' from Salesforce::EntitySubscription to [Account, Asset, BLND_DFAC_Shared_View__c, BLND_DFCS_Carousel__c, BLND_DFCS_Slide__c, BLND_DFDT_Action_Item__c, BLND_DFDT_Discussion__c, BLND_DFDT_Highlight__c, BLND_DFDT_Issue__c, BLND_DFDT_Linker__c, BLND_DFDT_Project__c, BLND_DFDT_Resource__c, BLND_DFDT_Task__c, BLND_DFFF_Form__c, BLND_DFFF_Page__c, BLND_DFTE_Expense__c, BLND_DFTE_Time__c, BLND_DFTT_Document__c, BLND_DFTT_Entity_Info__c, BLND_DFTT_Folder__c, Campaign, Case, ChatterBotJobInfo__c, ChatterBotScheduledPosts__c, ChatterBot_BigBrotherWords__c, Chatter_List_Member__c, Chatter_List__c, Chatter_Message_Recipient__c, Chatter_Message__c, CollaborationGroup, Contact, ContentDocument, Contract, Dashboard, Event, Lead, Opportunity, Product2, Report, RestExplorerConfig__c, SoapBubble__c, Solution, Task, User, jjjj__c] using parent_id
+   Created one-to-one relationship 'subscriber' from Salesforce::EntitySubscription to Salesforce::User using subscriber_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::EntitySubscription to [SelfServiceUser, User] using created_by_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'related' from Salesforce::Group to Salesforce::UserRole using related_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Group to [Organization, User] using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Group to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Group to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_shares' from Salesforce::Group to Salesforce::AccountShare using user_or_group_id
+   Created one-to-many relationship 'campaign_shares' from Salesforce::Group to Salesforce::CampaignShare using user_or_group_id
+   Created one-to-many relationship 'case_shares' from Salesforce::Group to Salesforce::CaseShare using user_or_group_id
+   Created one-to-many relationship 'chatter_message__shares' from Salesforce::Group to Salesforce::Chatter_Message__Share using user_or_group_id
+   Created one-to-many relationship 'contact_shares' from Salesforce::Group to Salesforce::ContactShare using user_or_group_id
+   Created one-to-many relationship 'forecast_shares' from Salesforce::Group to Salesforce::ForecastShare using user_or_group_id
+   Created one-to-many relationship 'group_members' from Salesforce::Group to Salesforce::GroupMember using group_id
+   Created one-to-many relationship 'group_members' from Salesforce::Group to Salesforce::GroupMember using user_or_group_id
+   Created one-to-many relationship 'lead_shares' from Salesforce::Group to Salesforce::LeadShare using user_or_group_id
+   Created one-to-many relationship 'opportunity_shares' from Salesforce::Group to Salesforce::OpportunityShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'QueueSobject'
+   Created one-to-many relationship 'queue_sobjects' from Salesforce::Group to Salesforce::QueueSobject using queue_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::LeadFeed to Salesforce::Lead using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::LeadFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::LeadFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::LeadFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::LeadFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::LeadFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Lead to Salesforce::Lead using master_record_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Lead to [Group, User] using owner_id
+   Created one-to-one relationship 'converted_account' from Salesforce::Lead to Salesforce::Account using converted_account_id
+   Created one-to-one relationship 'converted_contact' from Salesforce::Lead to Salesforce::Contact using converted_contact_id
+   Created one-to-one relationship 'converted_opportunity' from Salesforce::Lead to Salesforce::Opportunity using converted_opportunity_id
+   Created one-to-one relationship 'created_by' from Salesforce::Lead to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Lead to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Lead to Salesforce::ActivityHistory using who_id
+   Created one-to-many relationship 'campaign_members' from Salesforce::Lead to Salesforce::CampaignMember using lead_id
+   Created one-to-many relationship 'email_statuses' from Salesforce::Lead to Salesforce::EmailStatus using who_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Lead to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Lead to Salesforce::Event using who_id
+   Created one-to-many relationship 'event_attendees' from Salesforce::Lead to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'feeds' from Salesforce::Lead to Salesforce::LeadFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'LeadHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Lead to Salesforce::LeadHistory using lead_id
+   Created one-to-many relationship 'shares' from Salesforce::Lead to Salesforce::LeadShare using lead_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Lead to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Lead to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Lead to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Lead to Salesforce::OpenActivity using who_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Lead to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Lead to Salesforce::Task using who_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Lead to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Skipping unsupported polymophic one-to-one relationship 'parent' from Salesforce::NewsFeed to [Account, Asset, BLND_DFAC_Shared_View__c, BLND_DFCS_Carousel__c, BLND_DFCS_Slide__c, BLND_DFDT_Action_Item__c, BLND_DFDT_Discussion__c, BLND_DFDT_Highlight__c, BLND_DFDT_Issue__c, BLND_DFDT_Linker__c, BLND_DFDT_Project__c, BLND_DFDT_Resource__c, BLND_DFDT_Task__c, BLND_DFFF_Form__c, BLND_DFFF_Page__c, BLND_DFTE_Expense__c, BLND_DFTE_Time__c, BLND_DFTT_Document__c, BLND_DFTT_Entity_Info__c, BLND_DFTT_Folder__c, Campaign, Case, ChatterBotJobInfo__c, ChatterBotScheduledPosts__c, ChatterBot_BigBrotherWords__c, Chatter_List_Member__c, Chatter_List__c, Chatter_Message_Recipient__c, Chatter_Message__c, CollaborationGroup, Contact, ContentDocument, Contract, Dashboard, Event, Lead, Opportunity, Product2, Report, RestExplorerConfig__c, SoapBubble__c, Solution, Task, User, jjjj__c] using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::NewsFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::NewsFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::NewsFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::NewsFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::NewsFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::OpportunityFeed to Salesforce::Opportunity using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::OpportunityFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::OpportunityFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::OpportunityFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::OpportunityFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::OpportunityFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'account' from Salesforce::Opportunity to Salesforce::Account using account_id
+   Created one-to-one relationship 'campaign' from Salesforce::Opportunity to Salesforce::Campaign using campaign_id
+   Creating ActiveRecord stub for the referenced entity 'Pricebook2'
+   Created one-to-one relationship 'pricebook2' from Salesforce::Opportunity to Salesforce::Pricebook2 using pricebook2_id
+   Created one-to-one relationship 'owner' from Salesforce::Opportunity to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Opportunity to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Opportunity to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_partners' from Salesforce::Opportunity to Salesforce::AccountPartner using opportunity_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Opportunity to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Opportunity to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Opportunity to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Opportunity to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Opportunity to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Opportunity to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Opportunity to Salesforce::OpenActivity using what_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityCompetitor'
+   Created one-to-many relationship 'opportunity_competitors' from Salesforce::Opportunity to Salesforce::OpportunityCompetitor using opportunity_id
+   Created one-to-many relationship 'opportunity_contact_roles' from Salesforce::Opportunity to Salesforce::OpportunityContactRole using opportunity_id
+   Created one-to-many relationship 'feeds' from Salesforce::Opportunity to Salesforce::OpportunityFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityFieldHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Opportunity to Salesforce::OpportunityFieldHistory using opportunity_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityHistory'
+   Created one-to-many relationship 'opportunity_histories' from Salesforce::Opportunity to Salesforce::OpportunityHistory using opportunity_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityLineItem'
+   Created one-to-many relationship 'opportunity_line_items' from Salesforce::Opportunity to Salesforce::OpportunityLineItem using opportunity_id
+   Created one-to-many relationship 'opportunity_partners_from' from Salesforce::Opportunity to Salesforce::OpportunityPartner using opportunity_id
+   Created one-to-many relationship 'shares' from Salesforce::Opportunity to Salesforce::OpportunityShare using opportunity_id
+   Created one-to-many relationship 'partners' from Salesforce::Opportunity to Salesforce::Partner using opportunity_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Opportunity to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Opportunity to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Opportunity to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::Product2Feed to Salesforce::Product2 using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::Product2Feed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::Product2Feed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::Product2Feed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::Product2Feed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::Product2Feed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'created_by' from Salesforce::Product2 to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Product2 to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Product2 to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Product2 to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Product2 to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Product2 to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Product2 to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Product2 to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Product2 to Salesforce::OpenActivity using what_id
+   Creating ActiveRecord stub for the referenced entity 'PricebookEntry'
+   Created one-to-many relationship 'pricebook_entries' from Salesforce::Product2 to Salesforce::PricebookEntry using product2_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Product2 to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'feeds' from Salesforce::Product2 to Salesforce::Product2Feed using parent_id
+   Created one-to-many relationship 'tasks' from Salesforce::Product2 to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Product2 to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::SolutionFeed to Salesforce::Solution using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::SolutionFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::SolutionFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::SolutionFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::SolutionFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::SolutionFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'owner' from Salesforce::Solution to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Solution to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Solution to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Solution to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'case_solutions' from Salesforce::Solution to Salesforce::CaseSolution using solution_id
+   Creating ActiveRecord stub for the referenced entity 'CategoryData'
+   Created one-to-many relationship 'category_datas' from Salesforce::Solution to Salesforce::CategoryData using related_sobject_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Solution to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Solution to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Solution to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Solution to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Solution to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'feeds' from Salesforce::Solution to Salesforce::SolutionFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'SolutionHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Solution to Salesforce::SolutionHistory using solution_id
+   Created one-to-many relationship 'tasks' from Salesforce::Solution to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Solution to Salesforce::UserProfileFeed using parent_id
+   Created one-to-many relationship 'votes' from Salesforce::Solution to Salesforce::Vote using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::UserFeed to Salesforce::User using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::UserFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::UserFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::UserFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::UserFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::UserFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+
+Using ActiveSalesforce connection
+Establishing new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'raygao@cde-verizon.net, ''
+Created new connection for ['https://www.salesforce.com/services/Soap/u/20.0', 'raygao@cde-verizon.net', ''] in 2.39331817626953 seconds
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+
+Using ActiveSalesforce connection
+   Creating ActiveRecord stub for the referenced entity 'UserRole'
+   Created one-to-one relationship 'user_role' from Salesforce::User to Salesforce::UserRole using user_role_id
+   Skipping unsupported polymophic one-to-one relationship 'delegated_approver' from Salesforce::User to [Group, User] using delegated_approver_id
+   Created one-to-one relationship 'manager' from Salesforce::User to Salesforce::User using manager_id
+   Created one-to-one relationship 'created_by' from Salesforce::User to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::User to Salesforce::User using last_modified_by_id
+   Created one-to-one relationship 'contact' from Salesforce::User to Salesforce::Contact using contact_id
+   Created one-to-one relationship 'account' from Salesforce::User to Salesforce::Account using account_id
+   Creating ActiveRecord stub for the referenced entity 'CallCenter'
+   Created one-to-one relationship 'call_center' from Salesforce::User to Salesforce::CallCenter using call_center_id
+   Creating ActiveRecord stub for the referenced entity 'AccountShare'
+   Created one-to-many relationship 'account_shares' from Salesforce::User to Salesforce::AccountShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'ApexLog'
+   Created one-to-many relationship 'apex_logs' from Salesforce::User to Salesforce::ApexLog using log_user_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignShare'
+   Created one-to-many relationship 'campaign_shares' from Salesforce::User to Salesforce::CampaignShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CaseShare'
+   Created one-to-many relationship 'case_shares' from Salesforce::User to Salesforce::CaseShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamMember'
+   Created one-to-many relationship 'case_team_members' from Salesforce::User to Salesforce::CaseTeamMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamTemplateMember'
+   Created one-to-many relationship 'case_team_template_members' from Salesforce::User to Salesforce::CaseTeamTemplateMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'Chatter_Message__Share'
+   Created one-to-many relationship 'chatter_message__shares' from Salesforce::User to Salesforce::Chatter_Message__Share using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'CollaborationGroupMember'
+   Created one-to-many relationship 'collaboration_group_members' from Salesforce::User to Salesforce::CollaborationGroupMember using member_id
+   Creating ActiveRecord stub for the referenced entity 'CollaborationInvitation'
+   Created one-to-many relationship 'collaboration_invitations' from Salesforce::User to Salesforce::CollaborationInvitation using created_by_id
+   Created one-to-many relationship 'collaboration_invitations' from Salesforce::User to Salesforce::CollaborationInvitation using shared_entity_id
+   Creating ActiveRecord stub for the referenced entity 'ContactShare'
+   Created one-to-many relationship 'contact_shares' from Salesforce::User to Salesforce::ContactShare using user_or_group_id
+   Created one-to-many relationship 'entity_subscriptions' from Salesforce::User to Salesforce::EntitySubscription using created_by_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::User to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'feed_subscriptions' from Salesforce::User to Salesforce::EntitySubscription using subscriber_id
+   Creating ActiveRecord stub for the referenced entity 'EventAttendee'
+   Created one-to-many relationship 'event_attendees' from Salesforce::User to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::User to Salesforce::FeedComment using created_by_id
+   Creating ActiveRecord stub for the referenced entity 'ForecastShare'
+   Created one-to-many relationship 'forecast_shares' from Salesforce::User to Salesforce::ForecastShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'GroupMember'
+   Created one-to-many relationship 'group_members' from Salesforce::User to Salesforce::GroupMember using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'LeadShare'
+   Created one-to-many relationship 'lead_shares' from Salesforce::User to Salesforce::LeadShare using user_or_group_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::User to Salesforce::NewsFeed using created_by_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::User to Salesforce::NewsFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityShare'
+   Created one-to-many relationship 'opportunity_shares' from Salesforce::User to Salesforce::OpportunityShare using user_or_group_id
+   Created one-to-many relationship 'feeds' from Salesforce::User to Salesforce::UserFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'UserPreference'
+   Created one-to-many relationship 'user_preferences' from Salesforce::User to Salesforce::UserPreference using user_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::User to Salesforce::UserProfileFeed using created_by_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::User to Salesforce::UserProfileFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Vote'
+   Created one-to-many relationship 'votes' from Salesforce::User to Salesforce::Vote using created_by_id
+   Created one-to-one relationship 'parent' from Salesforce::AccountFeed to Salesforce::Account using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::AccountFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::AccountFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::AccountFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::AccountFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::AccountFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Account to Salesforce::Account using master_record_id
+   Created one-to-one relationship 'parent' from Salesforce::Account to Salesforce::Account using parent_id
+   Created one-to-one relationship 'owner' from Salesforce::Account to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Account to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Account to Salesforce::User using last_modified_by_id
+   Creating ActiveRecord stub for the referenced entity 'AccountContactRole'
+   Created one-to-many relationship 'account_contact_roles' from Salesforce::Account to Salesforce::AccountContactRole using account_id
+   Created one-to-many relationship 'feeds' from Salesforce::Account to Salesforce::AccountFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'AccountHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Account to Salesforce::AccountHistory using account_id
+   Creating ActiveRecord stub for the referenced entity 'AccountPartner'
+   Created one-to-many relationship 'account_partners_from' from Salesforce::Account to Salesforce::AccountPartner using account_from_id
+   Created one-to-many relationship 'account_partners_to' from Salesforce::Account to Salesforce::AccountPartner using account_to_id
+   Created one-to-many relationship 'shares' from Salesforce::Account to Salesforce::AccountShare using account_id
+   Creating ActiveRecord stub for the referenced entity 'ActivityHistory'
+   Created one-to-many relationship 'activity_histories' from Salesforce::Account to Salesforce::ActivityHistory using account_id
+   Created one-to-many relationship 'contacts' from Salesforce::Account to Salesforce::Contact using account_id
+   Created one-to-many relationship 'contracts' from Salesforce::Account to Salesforce::Contract using account_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Account to Salesforce::EntitySubscription using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Event'
+   Created one-to-many relationship 'events' from Salesforce::Account to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Account to Salesforce::NewsFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'Note'
+   Created one-to-many relationship 'notes' from Salesforce::Account to Salesforce::Note using parent_id
+   Creating ActiveRecord stub for the referenced entity 'NoteAndAttachment'
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Account to Salesforce::NoteAndAttachment using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpenActivity'
+   Created one-to-many relationship 'open_activities' from Salesforce::Account to Salesforce::OpenActivity using account_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityPartner'
+   Created one-to-many relationship 'opportunity_partners_to' from Salesforce::Account to Salesforce::OpportunityPartner using account_to_id
+   Creating ActiveRecord stub for the referenced entity 'Partner'
+   Created one-to-many relationship 'partners_from' from Salesforce::Account to Salesforce::Partner using account_from_id
+   Created one-to-many relationship 'partners_to' from Salesforce::Account to Salesforce::Partner using account_to_id
+   Creating ActiveRecord stub for the referenced entity 'ProcessInstance'
+   Created one-to-many relationship 'process_instances' from Salesforce::Account to Salesforce::ProcessInstance using target_object_id
+   Creating ActiveRecord stub for the referenced entity 'Task'
+   Created one-to-many relationship 'tasks' from Salesforce::Account to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Account to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mbegin_db_transaction() (0.0ms)[0m   [0mOpening boxcar[0m
+  [4;36;1mSalesforce::Account Create (0.9ms)[0m   [0;1mINSERT INTO accounts (name, shipping_state, rating, master_record_id, last_activity_date, sic, upsell_opportunity__c, created_by_id, billing_city, billing_state, ticker_symbol, last_modified_by_id, shipping_country, owner_id, is_deleted, type, ownership, numberof_locations__c, parent_id, billing_country, shipping_street, shipping_postal_code, phone, fax, account_number, website, site, created_date, sla__c, active__c, shipping_city, annual_revenue, description, system_modstamp, sla_serial_number__c, sla_expiration_date__c, billing_street, billing_postal_code, last_modified_date, industry, number_of_employees, customer_priority__c) VALUES('1234567890', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mcommit_db_transaction() (0.0ms)[0m   [0mCommitting boxcar with 1 commands[0m
+  [4;36;1mSalesforce::SfBase Delete all (1226.9ms)[0m   [0;1mDELETE FROM salesforce_sf_bases WHERE (id IN ('001A000000SBjomIAD')) [0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::AssetFeed to Salesforce::Asset using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::AssetFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::AssetFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::AssetFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::AssetFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::AssetFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::CampaignFeed to Salesforce::Campaign using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::CampaignFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::CampaignFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::CampaignFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::CampaignFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::CampaignFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::Campaign to Salesforce::Campaign using parent_id
+   Created one-to-one relationship 'owner' from Salesforce::Campaign to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Campaign to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Campaign to Salesforce::User using last_modified_by_id
+   Creating ActiveRecord stub for the referenced entity 'RecordType'
+   Created one-to-one relationship 'campaign_member_record_type' from Salesforce::Campaign to Salesforce::RecordType using campaign_member_record_type_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Campaign to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feeds' from Salesforce::Campaign to Salesforce::CampaignFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignMember'
+   Created one-to-many relationship 'campaign_members' from Salesforce::Campaign to Salesforce::CampaignMember using campaign_id
+   Creating ActiveRecord stub for the referenced entity 'CampaignMemberStatus'
+   Created one-to-many relationship 'campaign_member_statuses' from Salesforce::Campaign to Salesforce::CampaignMemberStatus using campaign_id
+   Created one-to-many relationship 'shares' from Salesforce::Campaign to Salesforce::CampaignShare using campaign_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Campaign to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Campaign to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Campaign to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Campaign to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Campaign to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Campaign to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Campaign to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::CaseFeed to Salesforce::Case using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::CaseFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::CaseFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::CaseFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::CaseFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::CaseFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'contact' from Salesforce::Case to Salesforce::Contact using contact_id
+   Created one-to-one relationship 'account' from Salesforce::Case to Salesforce::Account using account_id
+   Created one-to-one relationship 'asset' from Salesforce::Case to Salesforce::Asset using asset_id
+   Created one-to-one relationship 'parent' from Salesforce::Case to Salesforce::Case using parent_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Case to [Group, User] using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Case to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Case to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Case to Salesforce::ActivityHistory using what_id
+   Creating ActiveRecord stub for the referenced entity 'CaseComment'
+   Created one-to-many relationship 'case_comments' from Salesforce::Case to Salesforce::CaseComment using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseContactRole'
+   Created one-to-many relationship 'case_contact_roles' from Salesforce::Case to Salesforce::CaseContactRole using cases_id
+   Created one-to-many relationship 'feeds' from Salesforce::Case to Salesforce::CaseFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Case to Salesforce::CaseHistory using case_id
+   Created one-to-many relationship 'shares' from Salesforce::Case to Salesforce::CaseShare using case_id
+   Creating ActiveRecord stub for the referenced entity 'CaseSolution'
+   Created one-to-many relationship 'case_solutions' from Salesforce::Case to Salesforce::CaseSolution using case_id
+   Created one-to-many relationship 'team_members' from Salesforce::Case to Salesforce::CaseTeamMember using parent_id
+   Creating ActiveRecord stub for the referenced entity 'CaseTeamTemplateRecord'
+   Created one-to-many relationship 'team_template_records' from Salesforce::Case to Salesforce::CaseTeamTemplateRecord using parent_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Case to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Case to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Case to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Case to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Case to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Case to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Case to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::ContactFeed to Salesforce::Contact using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::ContactFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::ContactFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::ContactFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::ContactFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::ContactFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Contact to Salesforce::Contact using master_record_id
+   Created one-to-one relationship 'account' from Salesforce::Contact to Salesforce::Account using account_id
+   Created one-to-one relationship 'reports_to' from Salesforce::Contact to Salesforce::Contact using reports_to_id
+   Created one-to-one relationship 'owner' from Salesforce::Contact to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Contact to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Contact to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_contact_roles' from Salesforce::Contact to Salesforce::AccountContactRole using contact_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Contact to Salesforce::ActivityHistory using who_id
+   Created one-to-many relationship 'campaign_members' from Salesforce::Contact to Salesforce::CampaignMember using contact_id
+   Created one-to-many relationship 'case_contact_roles' from Salesforce::Contact to Salesforce::CaseContactRole using contact_id
+   Created one-to-many relationship 'case_team_members' from Salesforce::Contact to Salesforce::CaseTeamMember using member_id
+   Created one-to-many relationship 'case_team_template_members' from Salesforce::Contact to Salesforce::CaseTeamTemplateMember using member_id
+   Created one-to-many relationship 'feeds' from Salesforce::Contact to Salesforce::ContactFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'ContactHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Contact to Salesforce::ContactHistory using contact_id
+   Created one-to-many relationship 'shares' from Salesforce::Contact to Salesforce::ContactShare using contact_id
+   Creating ActiveRecord stub for the referenced entity 'ContractContactRole'
+   Created one-to-many relationship 'contract_contact_roles' from Salesforce::Contact to Salesforce::ContractContactRole using contact_id
+   Creating ActiveRecord stub for the referenced entity 'EmailStatus'
+   Created one-to-many relationship 'email_statuses' from Salesforce::Contact to Salesforce::EmailStatus using who_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Contact to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Contact to Salesforce::Event using who_id
+   Created one-to-many relationship 'event_attendees' from Salesforce::Contact to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Contact to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Contact to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Contact to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Contact to Salesforce::OpenActivity using who_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityContactRole'
+   Created one-to-many relationship 'opportunity_contact_roles' from Salesforce::Contact to Salesforce::OpportunityContactRole using contact_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Contact to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Contact to Salesforce::Task using who_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Contact to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::ContractFeed to Salesforce::Contract using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::ContractFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::ContractFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::ContractFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::ContractFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::ContractFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'account' from Salesforce::Contract to Salesforce::Account using account_id
+   Created one-to-one relationship 'owner' from Salesforce::Contract to Salesforce::User using owner_id
+   Created one-to-one relationship 'company_signed' from Salesforce::Contract to Salesforce::User using company_signed_id
+   Created one-to-one relationship 'customer_signed' from Salesforce::Contract to Salesforce::Contact using customer_signed_id
+   Created one-to-one relationship 'activated_by' from Salesforce::Contract to Salesforce::User using activated_by_id
+   Created one-to-one relationship 'created_by' from Salesforce::Contract to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Contract to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Contract to Salesforce::ActivityHistory using what_id
+   Creating ActiveRecord stub for the referenced entity 'Approval'
+   Created one-to-many relationship 'approvals' from Salesforce::Contract to Salesforce::Approval using parent_id
+   Created one-to-many relationship 'contract_contact_roles' from Salesforce::Contract to Salesforce::ContractContactRole using contract_id
+   Created one-to-many relationship 'feeds' from Salesforce::Contract to Salesforce::ContractFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'ContractHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Contract to Salesforce::ContractHistory using contract_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Contract to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Contract to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Contract to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Contract to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Contract to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Contract to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Contract to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Contract to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Contract to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Skipping unsupported polymophic one-to-one relationship 'parent' from Salesforce::EntitySubscription to [Account, Asset, BLND_DFAC_Shared_View__c, BLND_DFCS_Carousel__c, BLND_DFCS_Slide__c, BLND_DFDT_Action_Item__c, BLND_DFDT_Discussion__c, BLND_DFDT_Highlight__c, BLND_DFDT_Issue__c, BLND_DFDT_Linker__c, BLND_DFDT_Project__c, BLND_DFDT_Resource__c, BLND_DFDT_Task__c, BLND_DFFF_Form__c, BLND_DFFF_Page__c, BLND_DFTE_Expense__c, BLND_DFTE_Time__c, BLND_DFTT_Document__c, BLND_DFTT_Entity_Info__c, BLND_DFTT_Folder__c, Campaign, Case, ChatterBotJobInfo__c, ChatterBotScheduledPosts__c, ChatterBot_BigBrotherWords__c, Chatter_List_Member__c, Chatter_List__c, Chatter_Message_Recipient__c, Chatter_Message__c, CollaborationGroup, Contact, ContentDocument, Contract, Dashboard, Event, Lead, Opportunity, Product2, Report, RestExplorerConfig__c, SoapBubble__c, Solution, Task, User, jjjj__c] using parent_id
+   Created one-to-one relationship 'subscriber' from Salesforce::EntitySubscription to Salesforce::User using subscriber_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::EntitySubscription to [SelfServiceUser, User] using created_by_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'related' from Salesforce::Group to Salesforce::UserRole using related_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Group to [Organization, User] using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Group to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Group to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_shares' from Salesforce::Group to Salesforce::AccountShare using user_or_group_id
+   Created one-to-many relationship 'campaign_shares' from Salesforce::Group to Salesforce::CampaignShare using user_or_group_id
+   Created one-to-many relationship 'case_shares' from Salesforce::Group to Salesforce::CaseShare using user_or_group_id
+   Created one-to-many relationship 'chatter_message__shares' from Salesforce::Group to Salesforce::Chatter_Message__Share using user_or_group_id
+   Created one-to-many relationship 'contact_shares' from Salesforce::Group to Salesforce::ContactShare using user_or_group_id
+   Created one-to-many relationship 'forecast_shares' from Salesforce::Group to Salesforce::ForecastShare using user_or_group_id
+   Created one-to-many relationship 'group_members' from Salesforce::Group to Salesforce::GroupMember using group_id
+   Created one-to-many relationship 'group_members' from Salesforce::Group to Salesforce::GroupMember using user_or_group_id
+   Created one-to-many relationship 'lead_shares' from Salesforce::Group to Salesforce::LeadShare using user_or_group_id
+   Created one-to-many relationship 'opportunity_shares' from Salesforce::Group to Salesforce::OpportunityShare using user_or_group_id
+   Creating ActiveRecord stub for the referenced entity 'QueueSobject'
+   Created one-to-many relationship 'queue_sobjects' from Salesforce::Group to Salesforce::QueueSobject using queue_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::LeadFeed to Salesforce::Lead using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::LeadFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::LeadFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::LeadFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::LeadFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::LeadFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'master_record' from Salesforce::Lead to Salesforce::Lead using master_record_id
+   Skipping unsupported polymophic one-to-one relationship 'owner' from Salesforce::Lead to [Group, User] using owner_id
+   Created one-to-one relationship 'converted_account' from Salesforce::Lead to Salesforce::Account using converted_account_id
+   Created one-to-one relationship 'converted_contact' from Salesforce::Lead to Salesforce::Contact using converted_contact_id
+   Created one-to-one relationship 'converted_opportunity' from Salesforce::Lead to Salesforce::Opportunity using converted_opportunity_id
+   Created one-to-one relationship 'created_by' from Salesforce::Lead to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Lead to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Lead to Salesforce::ActivityHistory using who_id
+   Created one-to-many relationship 'campaign_members' from Salesforce::Lead to Salesforce::CampaignMember using lead_id
+   Created one-to-many relationship 'email_statuses' from Salesforce::Lead to Salesforce::EmailStatus using who_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Lead to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Lead to Salesforce::Event using who_id
+   Created one-to-many relationship 'event_attendees' from Salesforce::Lead to Salesforce::EventAttendee using attendee_id
+   Created one-to-many relationship 'feeds' from Salesforce::Lead to Salesforce::LeadFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'LeadHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Lead to Salesforce::LeadHistory using lead_id
+   Created one-to-many relationship 'shares' from Salesforce::Lead to Salesforce::LeadShare using lead_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Lead to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Lead to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Lead to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Lead to Salesforce::OpenActivity using who_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Lead to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Lead to Salesforce::Task using who_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Lead to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Skipping unsupported polymophic one-to-one relationship 'parent' from Salesforce::NewsFeed to [Account, Asset, BLND_DFAC_Shared_View__c, BLND_DFCS_Carousel__c, BLND_DFCS_Slide__c, BLND_DFDT_Action_Item__c, BLND_DFDT_Discussion__c, BLND_DFDT_Highlight__c, BLND_DFDT_Issue__c, BLND_DFDT_Linker__c, BLND_DFDT_Project__c, BLND_DFDT_Resource__c, BLND_DFDT_Task__c, BLND_DFFF_Form__c, BLND_DFFF_Page__c, BLND_DFTE_Expense__c, BLND_DFTE_Time__c, BLND_DFTT_Document__c, BLND_DFTT_Entity_Info__c, BLND_DFTT_Folder__c, Campaign, Case, ChatterBotJobInfo__c, ChatterBotScheduledPosts__c, ChatterBot_BigBrotherWords__c, Chatter_List_Member__c, Chatter_List__c, Chatter_Message_Recipient__c, Chatter_Message__c, CollaborationGroup, Contact, ContentDocument, Contract, Dashboard, Event, Lead, Opportunity, Product2, Report, RestExplorerConfig__c, SoapBubble__c, Solution, Task, User, jjjj__c] using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::NewsFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::NewsFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::NewsFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::NewsFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::NewsFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::OpportunityFeed to Salesforce::Opportunity using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::OpportunityFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::OpportunityFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::OpportunityFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::OpportunityFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::OpportunityFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'account' from Salesforce::Opportunity to Salesforce::Account using account_id
+   Created one-to-one relationship 'campaign' from Salesforce::Opportunity to Salesforce::Campaign using campaign_id
+   Creating ActiveRecord stub for the referenced entity 'Pricebook2'
+   Created one-to-one relationship 'pricebook2' from Salesforce::Opportunity to Salesforce::Pricebook2 using pricebook2_id
+   Created one-to-one relationship 'owner' from Salesforce::Opportunity to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Opportunity to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Opportunity to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'account_partners' from Salesforce::Opportunity to Salesforce::AccountPartner using opportunity_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Opportunity to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Opportunity to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Opportunity to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Opportunity to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Opportunity to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Opportunity to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Opportunity to Salesforce::OpenActivity using what_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityCompetitor'
+   Created one-to-many relationship 'opportunity_competitors' from Salesforce::Opportunity to Salesforce::OpportunityCompetitor using opportunity_id
+   Created one-to-many relationship 'opportunity_contact_roles' from Salesforce::Opportunity to Salesforce::OpportunityContactRole using opportunity_id
+   Created one-to-many relationship 'feeds' from Salesforce::Opportunity to Salesforce::OpportunityFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityFieldHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Opportunity to Salesforce::OpportunityFieldHistory using opportunity_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityHistory'
+   Created one-to-many relationship 'opportunity_histories' from Salesforce::Opportunity to Salesforce::OpportunityHistory using opportunity_id
+   Creating ActiveRecord stub for the referenced entity 'OpportunityLineItem'
+   Created one-to-many relationship 'opportunity_line_items' from Salesforce::Opportunity to Salesforce::OpportunityLineItem using opportunity_id
+   Created one-to-many relationship 'opportunity_partners_from' from Salesforce::Opportunity to Salesforce::OpportunityPartner using opportunity_id
+   Created one-to-many relationship 'shares' from Salesforce::Opportunity to Salesforce::OpportunityShare using opportunity_id
+   Created one-to-many relationship 'partners' from Salesforce::Opportunity to Salesforce::Partner using opportunity_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Opportunity to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'tasks' from Salesforce::Opportunity to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Opportunity to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::Product2Feed to Salesforce::Product2 using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::Product2Feed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::Product2Feed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::Product2Feed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::Product2Feed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::Product2Feed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'created_by' from Salesforce::Product2 to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Product2 to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Product2 to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Product2 to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Product2 to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Product2 to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'notes' from Salesforce::Product2 to Salesforce::Note using parent_id
+   Created one-to-many relationship 'notes_and_attachments' from Salesforce::Product2 to Salesforce::NoteAndAttachment using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Product2 to Salesforce::OpenActivity using what_id
+   Creating ActiveRecord stub for the referenced entity 'PricebookEntry'
+   Created one-to-many relationship 'pricebook_entries' from Salesforce::Product2 to Salesforce::PricebookEntry using product2_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Product2 to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'feeds' from Salesforce::Product2 to Salesforce::Product2Feed using parent_id
+   Created one-to-many relationship 'tasks' from Salesforce::Product2 to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Product2 to Salesforce::UserProfileFeed using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::SolutionFeed to Salesforce::Solution using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::SolutionFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::SolutionFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::SolutionFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::SolutionFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::SolutionFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'owner' from Salesforce::Solution to Salesforce::User using owner_id
+   Created one-to-one relationship 'created_by' from Salesforce::Solution to Salesforce::User using created_by_id
+   Created one-to-one relationship 'last_modified_by' from Salesforce::Solution to Salesforce::User using last_modified_by_id
+   Created one-to-many relationship 'activity_histories' from Salesforce::Solution to Salesforce::ActivityHistory using what_id
+   Created one-to-many relationship 'case_solutions' from Salesforce::Solution to Salesforce::CaseSolution using solution_id
+   Creating ActiveRecord stub for the referenced entity 'CategoryData'
+   Created one-to-many relationship 'category_datas' from Salesforce::Solution to Salesforce::CategoryData using related_sobject_id
+   Created one-to-many relationship 'feed_subscriptions_for_entity' from Salesforce::Solution to Salesforce::EntitySubscription using parent_id
+   Created one-to-many relationship 'events' from Salesforce::Solution to Salesforce::Event using what_id
+   Created one-to-many relationship 'news_feeds' from Salesforce::Solution to Salesforce::NewsFeed using parent_id
+   Created one-to-many relationship 'open_activities' from Salesforce::Solution to Salesforce::OpenActivity using what_id
+   Created one-to-many relationship 'process_instances' from Salesforce::Solution to Salesforce::ProcessInstance using target_object_id
+   Created one-to-many relationship 'feeds' from Salesforce::Solution to Salesforce::SolutionFeed using parent_id
+   Creating ActiveRecord stub for the referenced entity 'SolutionHistory'
+   Created one-to-many relationship 'histories' from Salesforce::Solution to Salesforce::SolutionHistory using solution_id
+   Created one-to-many relationship 'tasks' from Salesforce::Solution to Salesforce::Task using what_id
+   Created one-to-many relationship 'user_profile_feeds' from Salesforce::Solution to Salesforce::UserProfileFeed using parent_id
+   Created one-to-many relationship 'votes' from Salesforce::Solution to Salesforce::Vote using parent_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+   Created one-to-one relationship 'parent' from Salesforce::UserFeed to Salesforce::User using parent_id
+   Created one-to-one relationship 'feed_post' from Salesforce::UserFeed to Salesforce::FeedPost using feed_post_id
+   Skipping unsupported polymophic one-to-one relationship 'created_by' from Salesforce::UserFeed to [SelfServiceUser, User] using created_by_id
+   Created one-to-many relationship 'feed_comments' from Salesforce::UserFeed to Salesforce::FeedComment using feed_item_id
+   Created one-to-many relationship 'feed_posts' from Salesforce::UserFeed to Salesforce::FeedPost using feed_item_id
+   Created one-to-many relationship 'feed_tracked_changes' from Salesforce::UserFeed to Salesforce::FeedTrackedChange using feed_item_id
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m
+  [4;36;1mbegin_db_transaction() (0.0ms)[0m   [0;1mOpening boxcar[0m
+  [4;35;1mrollback_db_transaction() (0.0ms)[0m   [0mRolling back boxcar[0m

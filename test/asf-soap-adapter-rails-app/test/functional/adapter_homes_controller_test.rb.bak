@@ -1,0 +1,45 @@
+require 'test_helper'
+
+class AdapterHomesControllerTest < ActionController::TestCase
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:adapter_homes)
+  end
+
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
+
+  test "should create adapter_home" do
+    assert_difference('AdapterHome.count') do
+      post :create, :adapter_home => { }
+    end
+
+    assert_redirected_to adapter_home_path(assigns(:adapter_home))
+  end
+
+  test "should show adapter_home" do
+    get :show, :id => adapter_homes(:one).to_param
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get :edit, :id => adapter_homes(:one).to_param
+    assert_response :success
+  end
+
+  test "should update adapter_home" do
+    put :update, :id => adapter_homes(:one).to_param, :adapter_home => { }
+    assert_redirected_to adapter_home_path(assigns(:adapter_home))
+  end
+
+  test "should destroy adapter_home" do
+    assert_difference('AdapterHome.count', -1) do
+      delete :destroy, :id => adapter_homes(:one).to_param
+    end
+
+    assert_redirected_to adapter_homes_path
+  end
+end

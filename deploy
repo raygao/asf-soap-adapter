@@ -1,0 +1,6 @@
+rake version:bump:patch
+sudo gem uninstall asf-soap-adapter
+rm pkg/*gem
+git add .
+git commit -m 'API version is a string, converted from float'
+sudo rake install

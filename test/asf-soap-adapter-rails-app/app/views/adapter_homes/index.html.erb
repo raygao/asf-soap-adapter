@@ -1,0 +1,24 @@
+<h1>Listing adapter_homes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Version</th>
+  </tr>
+
+<% @adapter_homes.each do |adapter_home| %>
+  <tr>
+    <td><%=h adapter_home.name %></td>
+    <td><%=h adapter_home.description %></td>
+    <td><%=h adapter_home.version %></td>
+    <td><%= link_to 'Show', adapter_home %></td>
+    <td><%= link_to 'Edit', edit_adapter_home_path(adapter_home) %></td>
+    <td><%= link_to 'Destroy', adapter_home, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New adapter_home', new_adapter_home_path %>

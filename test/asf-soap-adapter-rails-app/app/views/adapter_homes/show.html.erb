@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @adapter_home.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @adapter_home.description %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%=h @adapter_home.version %>
+</p>
+
+
+<%= link_to 'Edit', edit_adapter_home_path(@adapter_home) %> |
+<%= link_to 'Back', adapter_homes_path %>
