@@ -1,5 +1,5 @@
 git add .
-git commit -m 'Adding more wrapper classes + tests'
+git commit -m 'Adding search capability to ChatterFeed'
 sudo rake version:bump:patch
 sudo gem uninstall asf-soap-adapter
 sudo rm pkg/*gem
