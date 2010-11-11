@@ -19,7 +19,7 @@ require 'yaml'
 
 
 module ActiveSalesforce  
-  
+  # This is the main error class used by ActiveSalesforce Adapter.
   class ASFError < RuntimeError
     attr :fault
     
@@ -32,14 +32,17 @@ module ActiveSalesforce
     end
   end
   
-  
+  # Error related to creating a binding with the Salesforce Web Services API
   class ASFRecordingBindingError < ASFError
     def initialize(logger, message)
       super(logger, message)    
     end
   end
   
-  
+  # A wrapper for the Salesforce RForce Binding. <em>recording</em> attribute
+  # allows you to save web services traffic information for later debug purpose.
+  # It is saved to a file which is specified by in the YAML file, e.g. 'database.yml'
+  # In production, it should not be used, because it generates a lot of overhead.
   class RecordingBinding < RForce::Binding
     
     attr_reader :recorded_responses

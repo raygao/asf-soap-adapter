@@ -1,6 +1,6 @@
 == Welcome to ActiveSalesforce SOAP Adapter (asf-soap-adapter)
 
-The "asf-soap-adapter" is based on the ActiveSalesforce-Adapter. It has been updated to include new methods/APIs from the latest version of the Salesforce Web Services (SOAP-based) APIs. At the time of release, that API is at version 20. 
+The "asf-soap-adapter" is based on the ActiveSalesforce-Adapter (link:classes/ActiveRecord/Base.html and link:classes/ActiveRecord/ConnectionAdapters/SalesforceAdapter.html). It has been updated to include new methods/APIs from the latest version of the Salesforce Web Services (SOAP-based) APIs. At the time of release, that API is at version 20. 
 Major features:
 1. Removed hardcoded version of v19, v18, etc in the code. Now, you just specify it in the 'database.yml' file with 'api_version'. By default it is at 20.0
 2. Adding RForce GEM as a prerequisite. By removing embedded RForce 0.4.0 files, we can now taken advantage of RForce 0.4.1 GEM, which is cleaner and addressed several problems with Hash. One thing to note: if you are using <em>RFORCE:MethodHash</em> class. It has been been replaced by <OpenHash> class. To use it, simply call <em>OpenHash.new({})</em> in place of MethodHash. Previously, there was a bug with the MethodHash class causing Id to be put into an array, e.g. FeedPost.Id[0], even though there was only one element. So, now it is FeedPost.Id.

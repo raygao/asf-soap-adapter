@@ -72,6 +72,18 @@ module Salesforce
       query_results = connection.binding.query :searchString => sql
       return query_results.queryResponse.result.records unless query_results.queryResponse.result.size < 1 
     end
+
+    attr_reader :current_connection, :connection_owner
+
+    # Return a read only version of the current_connection
+    def current_connection
+      connection
+    end
+
+    # Returns the owner's info of the current Salesforce WS connection
+    def connection_owner
+      connection.get_user_info
+    end
  
   end
 end

@@ -1,6 +1,7 @@
 =begin
 ActiveSalesforce
 Copyright 2006 Doug Chasman
+2010 updated by Raymond Gao
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -34,9 +35,17 @@ require File.dirname(__FILE__) + '/sid_authentication_filter'
 require File.dirname(__FILE__) + '/recording_binding'
 require File.dirname(__FILE__) + '/result_array'
 
-#See http://www.rubular.com/ for Ruby Regular Expression
+# See http://www.rubular.com/ for Ruby Regular Expression
+# See http://api.rubyonrails.org/classes/ActiveRecord/Base.html for documentation
+# ActiveRecord
+# To Understand how to write an adapter, see:
+#    http://ar.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/AbstractAdapter.html
+#        and
+#    http://rails.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/AbstractAdapter.html
 
 module ActiveRecord
+  # Overrides the ActiveRecord::Base class to provide Salesforce Web Services services
+  # Particularly important are 1) getting a 'binding' and 2) 'api_version'
   class Base
     @@cache = {}
 
@@ -119,7 +128,8 @@ module ActiveRecord
 
 
   module ConnectionAdapters
-
+    # Inherit from <em>ConnectionAdapters::AbstractAdapter</em> see:
+    #  http://rails.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/AbstractAdapter.html
     class SalesforceAdapter < AbstractAdapter
       include StringHelper
 
@@ -128,6 +138,7 @@ module ActiveRecord
       attr_accessor :batch_size
       attr_reader :entity_def_map, :keyprefix_to_entity_def_map, :config, :class_to_entity_map
 
+      # Create a new instance of the connection adapter
       def initialize(connection, logger, config)
         super(connection, logger)
 
@@ -141,22 +152,21 @@ module ActiveRecord
         @class_to_entity_map = {}
       end
 
-
       def set_class_for_entity(klass, entity_name)
         debug("Setting @class_to_entity_map['#{entity_name.upcase}'] = #{klass} for connection #{self}")
         @class_to_entity_map[entity_name.upcase] = klass
       end
 
-
+      # returns the binding associated with the current adapter
+      # e.g Salesforce::User.first.connection.binding -> returns the binding.
       def binding
         @connection
       end
 
-
+      #Sets the adapter name to "ActiveSalesforce"
       def adapter_name #:nodoc:
         'ActiveSalesforce'
       end
-
 
       def supports_migrations? #:nodoc:
         false
@@ -171,8 +181,7 @@ module ActiveRecord
         true
       end
 
-      # QUOTING ==================================================
-
+      #-- QUOTING ==================================================
       def quote(value, column = nil)
         case value
         when NilClass              then quoted_value = "NULL"
@@ -185,13 +194,13 @@ module ActiveRecord
         quoted_value
       end
 
-      # CONNECTION MANAGEMENT ====================================
-
+      #-- CONNECTION MANAGEMENT ====================================
+      # Set the connection state to active
       def active?
         true
       end
 
-
+      # Overrides the basic method for ActiveRecord::ConnectionAdapters::AbstractAdapter
       def reconnect!
         connect
       end
@@ -222,7 +231,7 @@ module ActiveRecord
         @command_boxcar = []
       end
 
-
+      # Calls <em>RForce::Binding</em> -> <em>method_missing</em> -> <em>call_remote method, args[0] methods</em>
       def send_commands(commands)
         # Send the boxcar'ed command set
         verb = commands[0].verb
@@ -258,7 +267,6 @@ module ActiveRecord
 
         result
       end
-
 
       # Commits the transaction (and turns on auto-committing).
       def commit_db_transaction()
@@ -296,7 +304,13 @@ module ActiveRecord
 
 
       # DATABASE STATEMENTS ======================================
-
+      # This method is very important. Pretty much all the 'find' methods call
+      # it. This is the place to toggle linebreak for debugging purpose.
+      # In essence, your finder method calls ActiveRecord, which generates a 'sql'
+      # And, this methods turn it into a 'soql' statement, and use Rforce to call
+      # Salesforce and gets a result.
+      # So, if you are having problems, make sure you check 'soql' and toggle the
+      # 'result' object.
       def select_all(sql, name = nil) #:nodoc:
 
         # silent-e's solution for single quote escape
@@ -381,6 +395,8 @@ module ActiveRecord
         result
       end
 
+      # This methods constructs an array of result objects to be returned to your
+      # ActiveRecord's finder method.
       def add_rows(entity_def, query_result, result, limit)
         records = query_result[:records]
         records = [ records ] unless records.is_a?(Array)
@@ -410,6 +426,8 @@ module ActiveRecord
         end
       end
 
+      # Calls the <b><em>'select_all'</em></b> method, but limits the result to return only a
+      # single row.
       def select_one(sql, name = nil) #:nodoc:
         self.batch_size = 1
 
@@ -418,7 +436,7 @@ module ActiveRecord
         result.nil? ? nil : result.first
       end
 
-
+      # Insert object into Salesforce DB
       def insert(sql, name = nil, pk = nil, id_value = nil, sequence_name = nil)
         log(sql, name) {
           # Convert sql to sobject
@@ -445,7 +463,7 @@ module ActiveRecord
         }
       end
 
-
+      # Updates object(s) via SQL. It is an adapter method to be used by ActiveRecord
       def update(sql, name = nil) #:nodoc:
         # From silent-e, solution for ARel
         sql = sql.gsub(/WHERE\s+\([A-Z]+\./mi,"WHERE ")
@@ -475,7 +493,7 @@ module ActiveRecord
         #}
       end
 
-
+      # Delete object(s) from Salesforce
       def delete(sql, name = nil)
         log(sql, name) {
           # Extract the id
@@ -496,7 +514,7 @@ module ActiveRecord
         }
       end
 
-
+      # If a SF object is dirty, it is called to get fresh attributes.
       def get_updated(object_type, start_date, end_date, name = nil)
         msg = "get_updated(#{object_type}, #{start_date}, #{end_date})"
         log(msg, name) {
@@ -511,7 +529,7 @@ module ActiveRecord
         }
       end
 
-
+      # Get SF object(s) that have been marked as deleted but not yet permanently removed, like things in a recycle bin.
       def get_deleted(object_type, start_date, end_date, name = nil)
         msg = "get_deleted(#{object_type}, #{start_date}, #{end_date})"
         log(msg, name) {
@@ -531,7 +549,8 @@ module ActiveRecord
         }
       end
 
-
+      # Returns information about the user account which is used to connect to salesforce.
+      # <b>Salesforce::User.first.connection.get_user_info</b>
       def get_user_info(name = nil)
         msg = "get_user_info()"
         log(msg, name) {
@@ -539,7 +558,7 @@ module ActiveRecord
         }
       end
 
-
+      # Get value given object type, fields, and Salesforce Object.
       def retrieve_field_values(object_type, fields, ids, name = nil)
         msg = "retrieve(#{object_type}, [#{ids.to_a.join(', ')}])"
         log(msg, name) {
@@ -611,6 +630,9 @@ module ActiveRecord
         fields
       end
 
+      # Removed no valid SQL modifier, right now, only LIMIT is allowed.
+      # To use a custom SQL, it is better to interface with RForce, see
+      # Salesforce::SfBase query_by_sql(sql) method.
       def extract_sql_modifier(soql, modifier)
         value = soql.match(/\s+#{modifier}\s+(\d+)/mi)
         if value
@@ -631,7 +653,8 @@ module ActiveRecord
         value
       end
 
-
+      # A clever contraption to construct the key to the object array which is returned
+      # by Rforce from SOAP result.
       def get_result(response, method)
         responseName = (method.to_s + "Response").to_sym
         finalResponse = response[responseName]
@@ -653,6 +676,15 @@ module ActiveRecord
       end
 
 
+      # A clever contract to get meta-attribute associated with a Salesforce Object.
+      # by Rforce from SOAP result. e.g.
+      # <b>pp user.connection.get_entity_def("AccountFeed") </b>
+      #      <ActiveSalesforce::EntityDefinition:0x1030eee40
+      #      @api_name_to_column=
+      #        {"CreatedDate"=> <ActiveRecord::ConnectionAdapters::SalesforceColumn:0x1030f2c20
+      #          @api_name="CreatedDate",
+      #          @createable=false,
+      #          .....
       def get_entity_def(entity_name)
         cached_entity_def = @entity_def_map[entity_name]
 
@@ -778,12 +810,15 @@ module ActiveRecord
       end
 
 
+      # Return column names given a table_name, usage:
+      # >> pp user.connection.columns('account_feed') or ('AccountFeed')
       def columns(table_name, name = nil)
         table_name, columns, entity_def = lookup(table_name)
         entity_def.columns
       end
 
-
+      # Given a entity and show column names,
+      # >>pp user.connection.class_from_entity_name("AccountFeed")
       def class_from_entity_name(entity_name)
         entity_klass = @class_to_entity_map[entity_name.upcase]
         debug("Found matching class '#{entity_klass}' for entity '#{entity_name}'") if entity_klass
@@ -794,7 +829,7 @@ module ActiveRecord
         entity_klass
       end
 
-
+      # Create a blank Salesforce object
       def create_sobject(entity_name, id, fields, null_fields = [])
         sobj = []
 
@@ -814,7 +849,7 @@ module ActiveRecord
         [ :sObjects, sobj ]
       end
 
-
+      # Returns column names associated with a Salesforce Object
       def column_names(table_name)
         columns(table_name).map { |column| column.name }
       end
