@@ -1,6 +1,6 @@
+git add .
+git commit -m 'Adding more wrapper classes + tests'
 rake version:bump:patch
 sudo gem uninstall asf-soap-adapter
 rm pkg/*gem
-git add .
-git commit -m 'Adding more wrapper classes'
 sudo rake install

@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{asf-soap-adapter}
-  s.version = "0.9.10"
+  s.version = "0.9.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Doug Chasman", "Luigi Montanez", "Senthil Nayagam", "Justin Ball", "Jesse Hallett", "Andrew Freeberg", "Blaine Schanfeldt", "Matte Edens", "Raymond Gao"]
@@ -40,12 +40,15 @@ Gem::Specification.new do |s|
      "lib/asf-soap-adapter.rb",
      "lib/salesforce/account.rb",
      "lib/salesforce/account_feed.rb",
+     "lib/salesforce/apex_log.rb",
      "lib/salesforce/asset.rb",
      "lib/salesforce/asset_feed.rb",
      "lib/salesforce/campaign.rb",
      "lib/salesforce/campaign_feed.rb",
      "lib/salesforce/case.rb",
      "lib/salesforce/case_feed.rb",
+     "lib/salesforce/case_team_member.rb",
+     "lib/salesforce/case_team_role.rb",
      "lib/salesforce/chatter_feed.rb",
      "lib/salesforce/contact.rb",
      "lib/salesforce/contact_feed.rb",
@@ -57,6 +60,7 @@ Gem::Specification.new do |s|
      "lib/salesforce/feed_tracked_change.rb",
      "lib/salesforce/file_writer.rb",
      "lib/salesforce/group.rb",
+     "lib/salesforce/group_member.rb",
      "lib/salesforce/lead.rb",
      "lib/salesforce/lead_feed.rb",
      "lib/salesforce/news_feed.rb",
@@ -69,9 +73,13 @@ Gem::Specification.new do |s|
      "lib/salesforce/sf_utility.rb",
      "lib/salesforce/solution.rb",
      "lib/salesforce/solution_feed.rb",
+     "lib/salesforce/solution_history.rb",
+     "lib/salesforce/task.rb",
+     "lib/salesforce/task_feed.rb",
      "lib/salesforce/user.rb",
      "lib/salesforce/user_feed.rb",
      "lib/salesforce/user_profile_feed.rb",
+     "lib/salesforce/user_role.rb",
      "test/asf-soap-adapter-rails-app/README",
      "test/asf-soap-adapter-rails-app/Rakefile",
      "test/asf-soap-adapter-rails-app/app/controllers/adapter_homes_controller.rb",
