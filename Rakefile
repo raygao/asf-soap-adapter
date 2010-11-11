@@ -12,7 +12,7 @@ begin
     gem.authors = ["Doug Chasman","Luigi Montanez","Senthil Nayagam","Justin Ball","Jesse Hallett", "Andrew Freeberg", "Blaine Schanfeldt", "Matte Edens", "Raymond Gao"]
 
     # Requiring RForce as an add-on gem, rather than hard-code the 0.4.0
-    gem.add_dependency('rforce', '>=0.4.0')
+    gem.add_dependency('rforce', '>=0.4.1')
     gem.add_dependency('builder', '>= 1.2.4')
     gem.add_dependency('hpricot', '>=0.8.2')
 
