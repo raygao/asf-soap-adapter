@@ -73,7 +73,7 @@ module Salesforce
       return query_results.queryResponse.result.records unless query_results.queryResponse.result.size < 1 
     end
 
-    attr_reader :current_connection, :connection_owner
+    attr_reader :current_connection, :connection_owner, :current_connection_binding
 
     # Return a read only version of the current_connection
     def current_connection
@@ -83,6 +83,11 @@ module Salesforce
     # Returns the owner's info of the current Salesforce WS connection
     def connection_owner
       connection.get_user_info
+    end
+
+    # Return a read-only version of the binding associated with the current connection
+    def current_connection_binding
+      connection.binding
     end
  
   end

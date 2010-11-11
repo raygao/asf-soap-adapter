@@ -62,12 +62,16 @@ module Salesforce
       CreatedBy.LastName FROM FeedComments ORDER BY CreatedDate
     HERE
 
+    # find all chatter feeds based on object_type, query_string, and given binding
+    def search_chatter_feeds(object_type, query_string, binding, limit=100)
+      return get_all_chatter_feeds_with_attachments(nil, object_type, binding, 'no-attachment-for-search', limit, false, query_string)
+    end
 
     # 1. It does not return the attached file.
-    # 2. See get_all_feed_posts_with_attachments(object_id, object_type, binding, directory_name, limit=100, get_attachment=true)
+    # 2. See get_all_feed_posts_with_attachments(object_id, object_type, binding, directory_name, limit=100, get_attachment=true, query_string=nil)
     # 7. returns Ruby Array of matching records
     def get_all_chatter_feeds_without_attachments(object_id, object_type, binding, directory_name, limit=100)
-      return get_all_chatter_feeds_with_attachments(object_id, object_type, binding, directory_name, limit, false)
+      return get_all_chatter_feeds_with_attachments(object_id, object_type, binding, directory_name, limit, false, nil)
     end
 
     # 1. It returns the attached file.
@@ -84,20 +88,38 @@ module Salesforce
     # 6. <b>'limit</b> is the number of records to return
     # 7. <b>'get_attachment'</b> is a boolean flag, true gets the attachment,
     #     false does not get the attachment
+    # 8. <b>query_string</b> is used to search against the Salesforce. Note, if "object_id' is specified, query_string is ignored.
     # 8. returns Ruby Array of matching records
     # 9. TODO add conditions, e.g.
     #     search -> where FeedPost.CreatedDate > 2007-08-06T03:23:00.000Z and FeedPost.Body like '%post%'
     #     pagination ->
 
-    def get_all_chatter_feeds_with_attachments(object_id, object_type, binding, directory_name, limit=100, get_attachment=true)
+    def get_all_chatter_feeds_with_attachments(object_id, object_type, binding, directory_name, limit=100, get_attachment=true, query_string=nil)
       begin
         #e.g. select Id, type, FeedPost.body from UserProfileFeed WITH UserId = '005A0000000S8aIIAS'
-        qstring = <<-HERE
-        SELECT #{BASE_FRAG}, #{FEEDPOST_WITHOUT_CONTENT_DATA_FRAG},
-        (#{FEED_TRACKED_CHANGE_FRAG}), (#{FEED_COMMENT_FRAG} LIMIT #{limit})
-        FROM #{object_type}Feed where parentid = \'#{object_id}\'
-        ORDER BY CreatedDate DESC limit #{limit}
-        HERE
+        if !object_id.nil?
+          qstring = <<-HERE
+          SELECT #{BASE_FRAG}, #{FEEDPOST_WITHOUT_CONTENT_DATA_FRAG},
+          (#{FEED_TRACKED_CHANGE_FRAG}), (#{FEED_COMMENT_FRAG} LIMIT #{limit})
+          FROM #{object_type}Feed where parentid = \'#{object_id}\'
+          ORDER BY CreatedDate DESC limit #{limit}
+          HERE
+        elsif !query_string.nil?
+          # this is more like a search....
+          qstring = <<-HERE
+          SELECT #{BASE_FRAG}, #{FEEDPOST_WITHOUT_CONTENT_DATA_FRAG},
+          (#{FEED_TRACKED_CHANGE_FRAG}), (#{FEED_COMMENT_FRAG} LIMIT #{limit})
+          FROM #{object_type}Feed where FeedPost.Body like \'%#{query_string}%\'
+          ORDER BY CreatedDate DESC limit #{limit}
+          HERE
+        else
+          qstring = <<-HERE
+          SELECT #{BASE_FRAG}, #{FEEDPOST_WITHOUT_CONTENT_DATA_FRAG},
+          (#{FEED_TRACKED_CHANGE_FRAG}), (#{FEED_COMMENT_FRAG} LIMIT #{limit})
+          FROM #{object_type}Feed ORDER BY CreatedDate DESC limit #{limit}
+          HERE
+        end
+
 
         @logger.info('qstring: ' + qstring)
         # Note, if query FeedPost.ContentData, Salesforce only returns 1 entry at
