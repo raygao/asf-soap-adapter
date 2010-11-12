@@ -88,7 +88,7 @@ module Salesforce
 
 
     # Finders the appropriate Salesforce Object based on Object. No more guess work.
-    # nil means that the {oid} is not supported by this method, e.g. not suitable.
+    # <em>nil</em> means that the <em>oid</em> is not supported by this method, e.g. not suitable.
     def self.salesforce_object_find_by_id (oid)
       query_conditions = Hash.new
       query_conditions[:id] = oid
@@ -104,7 +104,7 @@ module Salesforce
     end
 
     # Finders the appropriate Salesforce Object based on Object Type and description
-    # nil means that the {oid} is not supported by this method, e.g. not suitable.
+    # <em>nil</em> means that the <em>oid</em> is not supported by this method, e.g. not suitable.
     def self.salesforce_object_find_by_type_and_conditions (otype, query_conditions)
       # for example
       #Salesforce::Group.find(:all, :conditions => ["email like :search", {:search => '%.com'}])
@@ -114,7 +114,7 @@ module Salesforce
     end
 
     # Finders the appropriate Salesforce Object based on the Object Type
-    # returning nil means that the {oid} is not supported by this method, e.g. not suitable.
+    # returning <em>nil</em> means that the <em>oid</em> is not supported by this method, e.g. not suitable.
     def self.salesforce_object_find_all(otype, query_conditions = nil)
       case otype
       when 'Account'

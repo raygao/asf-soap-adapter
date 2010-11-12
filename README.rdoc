@@ -114,15 +114,12 @@ lib
  -- active_record   -> asf model
  -- salesforce      -> convenience classes and utilities
 
-script
- Helper scripts for automation and generation.
-
 test
- Unit and functional tests along with fixtures.
+ Unit and functional tests along with fixtures. See enclosed test app (asf-soap-adapter-rails-app) for full-fledge tests.
 
 == Additional Note:
 The enclosed test app (asf-soap-adapter-rails-app) shows how to use the framework. Go into its "test/unit" directory, where examples are provided.
 
-I am currently, updating my reference app SFRWatcher to SFRWatcher_v20 to match the switch from the old gem to this new gem. Once it is ready, it will be posted on the web soon.
+I am currently, updating my reference app SFRWatcher to SFRWatcher_v20 to match the switch from the old gem to this new gem. Once it is ready, it will be posted on the web soon.  The project home: http://asf-soap-adapter.are4.us
 
 Copyright (c) 2010 Raymond Gao. See LICENSE for details.
