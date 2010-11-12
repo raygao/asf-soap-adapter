@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{asf-soap-adapter}
-  s.version = "0.9.16"
+  s.version = "0.9.18"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Doug Chasman", "Luigi Montanez", "Senthil Nayagam", "Justin Ball", "Jesse Hallett", "Andrew Freeberg", "Blaine Schanfeldt", "Matte Edens", "Raymond Gao"]
