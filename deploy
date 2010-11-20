@@ -1,5 +1,5 @@
 git add .
-git commit -m 'Improve documentation'
+git commit -m 'Add support for __r and __c for custom object'
 sudo rake version:bump:patch
 sudo gem uninstall asf-soap-adapter
 sudo rm pkg/*gem
