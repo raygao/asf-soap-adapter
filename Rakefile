@@ -15,6 +15,7 @@ begin
     gem.add_dependency('rforce', '>=0.4.1')
     gem.add_dependency('builder', '>= 1.2.4')
     gem.add_dependency('hpricot', '>=0.8.2')
+    gem.add_dependency('facets', '=2.8.4')
 
     #gem.add_dependency('rails', '>= 2.3.3')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
