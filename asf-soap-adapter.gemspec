@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{asf-soap-adapter}
-  s.version = "1.0.0"
+  s.version = "1.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Doug Chasman", "Luigi Montanez", "Senthil Nayagam", "Justin Ball", "Jesse Hallett", "Andrew Freeberg", "Blaine Schanfeldt", "Matte Edens", "Raymond Gao"]
-  s.date = %q{2010-11-22}
+  s.date = %q{2010-11-28}
   s.description = %q{ASF-Soap-Adapter is an improved version of ActiveSalesforce (ASF) is a Rails connection adapter that provides direct access to Salesforce.com hosted data and metadata via the ActiveRecord model layer. Objects, fields, and relationships are all auto surfaced as active record attributes and rels. It has been patched to V20 of the Web Services API and has support Chatter model.}
   s.email = %q{raygao2000@yahoo.com}
   s.extra_rdoc_files = [
@@ -280,18 +280,21 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rforce>, [">= 0.4.1"])
+      s.add_runtime_dependency(%q<rforce-raygao>, [">= 0.4.2"])
       s.add_runtime_dependency(%q<builder>, [">= 1.2.4"])
       s.add_runtime_dependency(%q<hpricot>, [">= 0.8.2"])
+      s.add_runtime_dependency(%q<facets>, ["= 2.8.4"])
     else
-      s.add_dependency(%q<rforce>, [">= 0.4.1"])
+      s.add_dependency(%q<rforce-raygao>, [">= 0.4.2"])
       s.add_dependency(%q<builder>, [">= 1.2.4"])
       s.add_dependency(%q<hpricot>, [">= 0.8.2"])
+      s.add_dependency(%q<facets>, ["= 2.8.4"])
     end
   else
-    s.add_dependency(%q<rforce>, [">= 0.4.1"])
+    s.add_dependency(%q<rforce-raygao>, [">= 0.4.2"])
     s.add_dependency(%q<builder>, [">= 1.2.4"])
     s.add_dependency(%q<hpricot>, [">= 0.8.2"])
+    s.add_dependency(%q<facets>, ["= 2.8.4"])
   end
 end
 

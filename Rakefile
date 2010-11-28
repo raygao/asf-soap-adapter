@@ -12,10 +12,13 @@ begin
     gem.authors = ["Doug Chasman","Luigi Montanez","Senthil Nayagam","Justin Ball","Jesse Hallett", "Andrew Freeberg", "Blaine Schanfeldt", "Matte Edens", "Raymond Gao"]
 
     # Requiring RForce as an add-on gem, rather than hard-code the 0.4.0
-    gem.add_dependency('rforce', '>=0.4.1')
+    # Using Ray Gao's version of Rforce, since the DEFAULT_BATCH_SIZE (rforce/binding.rb) has been expanded from 10 to 2000
+    # Furthermore, added 'oath' gem as a dependency, which is needed by 'Rforce' gem
+    gem.add_dependency('rforce-raygao', '>=0.4.2')
     gem.add_dependency('builder', '>= 1.2.4')
     gem.add_dependency('hpricot', '>=0.8.2')
     gem.add_dependency('facets', '=2.8.4')
+    gem.add_dependency('oauth', '=0.4.4')
 
     #gem.add_dependency('rails', '>= 2.3.3')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
