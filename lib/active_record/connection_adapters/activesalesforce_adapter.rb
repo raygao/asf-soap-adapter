@@ -279,8 +279,11 @@ module ActiveRecord
           if commands.length >= MAX_BOXCAR_SIZE or (previous_command and (command.verb != previous_command.verb))
             send_commands(commands)
 
-            commands = []
-            previous_command = nil
+            #Patch from Kostyl
+            commands = [command] # Otherwise command will be lost at all (every 200th command (MAX_BOXCAR_SIZE = 200))
+            previous_command = command
+            #commands = []
+            #previous_command = nil
           else
             commands << command
             previous_command = command
@@ -501,7 +504,7 @@ module ActiveRecord
 
           if match
             ids = [ match[1] ]
-          elsif  match.empty? # Most likely, this is a TestCase, YAML setup, because Salesforce does not allow global drop.
+          elsif  match.nil? # Most likely, this is a TestCase, YAML setup, because Salesforce does not allow global drop.
             return true
           else
             # Check for the form (id IN ('x', 'y'))
