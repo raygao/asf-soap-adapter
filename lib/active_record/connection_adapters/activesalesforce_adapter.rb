@@ -504,8 +504,6 @@ module ActiveRecord
 
           if match
             ids = [ match[1] ]
-          elsif  match.nil? # Most likely, this is a TestCase, YAML setup, because Salesforce does not allow global drop.
-            return true
           else
             # Check for the form (id IN ('x', 'y'))
             match = sql.match(/WHERE\s+\(\s*id\s+IN\s*\((.+)\)\)/mi)[1]
