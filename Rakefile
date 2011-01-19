@@ -14,7 +14,8 @@ begin
     # Requiring RForce as an add-on gem, rather than hard-code the 0.4.0
     # Using Ray Gao's version of Rforce, since the DEFAULT_BATCH_SIZE (rforce/binding.rb) has been expanded from 10 to 2000
     # Furthermore, added 'oath' gem as a dependency, which is needed by 'Rforce' gem
-    gem.add_dependency('rforce-raygao', '>=1.0')
+    #gem.add_dependency('rforce-raygao', '>=1.0')
+    gem.add_dependency('rforce', '>=0.6')
     gem.add_dependency('builder', '>= 1.2.4')
     gem.add_dependency('hpricot', '>=0.8.2')
     gem.add_dependency('facets', '=2.8.4')
