@@ -321,7 +321,7 @@ module ActiveRecord
         sql = fix_single_quote_in_where(sql)
         # Arel adds the class to the selection - we do not want this i.e...
         # SELECT     contacts.* FROM  => SELECT * FROM
-        sql = sql.gsub(/SELECT\s+[^\(][A-Z]+\./mi," ")
+        sql = sql.gsub(/SELECT\s+[^\(][A-Z]+\./mi,"SELECT ")
 
 
         raw_table_name = sql.match(/FROM (\w+)/mi)[1]
