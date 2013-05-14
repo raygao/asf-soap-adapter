@@ -387,7 +387,7 @@ module ActiveRecord
 
         add_rows(entity_def, query_result, result, limit)
 
-        while ((query_result[:done].casecmp("true") != 0) and (result.size < limit or limit == 0))
+        while ((query_result[:done].to_s.casecmp("true") != 0) and (result.size < limit or limit == 0))
           # Now queryMore
           locator = query_result[:queryLocator];
           query_result = get_result(@connection.queryMore(:queryLocator => locator), :queryMore)
@@ -416,7 +416,7 @@ module ActiveRecord
               attribute_name = column.name
 
               if column.type == :boolean
-                row[attribute_name] = (value.casecmp("true") == 0)
+                row[attribute_name] = (value.to_s.casecmp("true") == 0)
               else
                 row[attribute_name] = value
               end
